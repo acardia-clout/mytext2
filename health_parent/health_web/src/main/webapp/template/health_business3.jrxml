@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="health_business3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8e939851-d3be-4664-bcf9-47a3574a43cb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="reportDate" class="java.lang.String"/>
+	<parameter name="todayNewMember" class="java.lang.Integer"/>
+	<parameter name="totalMember" class="java.lang.Integer"/>
+	<parameter name="thisWeekNewMember" class="java.lang.Integer"/>
+	<parameter name="thisMonthNewMember" class="java.lang.Integer"/>
+	<parameter name="todayOrderNumber" class="java.lang.Integer"/>
+	<parameter name="todayVisitsNumber" class="java.lang.Integer"/>
+	<parameter name="thisWeekOrderNumber" class="java.lang.Integer"/>
+	<parameter name="thisWeekVisitsNumber" class="java.lang.Integer"/>
+	<parameter name="thisMonthOrderNumber" class="java.lang.Integer"/>
+	<parameter name="thisMonthVisitsNumber" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<field name="setmeal_count" class="java.lang.Long"/>
+	<field name="proportion" class="java.math.BigDecimal"/>
+	<field name="remark" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="99" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="220" height="70" uuid="b78e98f8-9500-4818-9f5b-76d8c0465369"/>
+				<imageExpression><![CDATA["http://www.itcast.cn/2018czgw/images/logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="351" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="0" width="400" height="51" uuid="3e977e15-c2ff-4e82-bd06-b7dd872b7057"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[运营数据统计]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="51" width="100" height="30" uuid="2b522d08-d7cf-48e1-b629-77254c79c56e"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[日期]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="51" width="300" height="30" uuid="28099900-360a-4489-ad48-4a2e1e183ab5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="81" width="400" height="30" uuid="a13282b5-8bfe-4f49-bb2f-3ba9d4b6a4de"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[会员数据]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="111" width="100" height="30" uuid="aefac54e-650a-4a04-a7bc-ecc2d2e7f85f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[今日新增会员]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="141" width="100" height="30" uuid="e5f44453-4b63-4847-a0a1-8afbad2d8e15"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[本周新增会员数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="111" width="100" height="30" uuid="f6263a5f-5fa4-42c4-896c-417fb0c26aba"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[总会员数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="141" width="100" height="30" uuid="36b7f2fd-1a01-48be-b2c2-d23d26f8880a"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[本月新增会员数]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="111" width="100" height="30" uuid="9575c32d-8a9a-4e8b-b874-5e7802e766b4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{todayNewMember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="141" width="100" height="30" uuid="96660372-0379-4055-8c9a-0b381034352f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{thisWeekNewMember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="111" width="100" height="30" uuid="c8d67b9e-92ef-46cd-8994-1f0bf408b045"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalMember}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="141" width="100" height="30" uuid="c98a97dc-a0ab-475f-a01a-752e018a01d6"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{thisMonthNewMember}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="171" width="400" height="30" uuid="ae22c226-bd3d-4ff8-b027-5644c6e5fa0d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[预约到诊数据]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="201" width="100" height="30" uuid="d7a69a5c-5ffb-4e69-b098-08fe7ec6c298"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[今日预约数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="231" width="100" height="30" uuid="be91c20f-be84-4b3f-862c-21b448a4084f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[本周预约数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="201" width="100" height="30" uuid="94a95e4c-c00b-4e67-8763-bdfbe0861221"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[今日到诊数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="231" width="100" height="30" uuid="acbde245-4606-4d32-a83e-8ec61865c554"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[本周到诊数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="261" width="100" height="30" uuid="1dd6d1ad-0d64-4761-b56b-a9f4a4ea3c3f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[本月预约数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="261" width="100" height="30" uuid="c02eaf90-2844-469e-a0b0-ffe7f4001653"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[本月到诊数]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="201" width="100" height="30" uuid="bf37ad34-ea8d-4f29-89ec-b2803c2f3c4e"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{todayOrderNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="231" width="100" height="30" uuid="f75614ce-4932-4c63-82f4-3598bb8d5e74"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{thisWeekOrderNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="261" width="100" height="30" uuid="4299eacb-d78d-4980-817a-3388c796c0fd"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{thisMonthOrderNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="201" width="100" height="30" uuid="00af2cce-f3a1-441a-a533-8db9399699e1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{todayVisitsNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="231" width="100" height="30" uuid="f97f6d8d-8f97-44eb-97c9-a5da04eda6b7"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{thisWeekVisitsNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="261" width="100" height="30" uuid="45c9b332-70c6-43f8-83bf-f0c5a909b344"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{thisMonthVisitsNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="291" width="400" height="30" uuid="5995a9cf-a8c7-44e5-908e-83ff9c2f9293"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[热门套餐]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="321" width="100" height="30" uuid="e78454eb-dd26-4a9b-af7b-2c5b2b51c886">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99a39bcd-03c8-4b42-a5dd-5f2c545d60b2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[套餐名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="321" width="100" height="30" uuid="e36d8558-4721-47af-9ee8-e7b85699e11d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ed7299a6-2c23-4d43-8f3d-bcd8462fe7d1"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[套餐预约数量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="321" width="100" height="30" uuid="c7087281-51e7-4d4b-848a-8dca7750d1a6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1cdcd47-203f-4cea-8d07-15d7935ba2e3"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[预约占比]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="321" width="100" height="30" uuid="9fc37306-eacb-42f9-ae34-5de7d5ab63f9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a0e98aa-851b-4a95-b823-98a812cf26c9"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<text><![CDATA[备注]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="100" height="30" uuid="a71cf535-8140-40d6-b3fa-ed041f38ea8e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99a39bcd-03c8-4b42-a5dd-5f2c545d60b2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="100" height="30" uuid="a99c7579-93cd-4a2b-bcf1-a5cfabbb3d71">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ed7299a6-2c23-4d43-8f3d-bcd8462fe7d1"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{setmeal_count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="30" uuid="5e1d6ae7-e73a-4eac-a58a-e4f9c49b3af7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1cdcd47-203f-4cea-8d07-15d7935ba2e3"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{proportion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="100" height="30" uuid="b75ab2e5-e04e-4897-ac09-218ef2ca1195">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a0e98aa-851b-4a95-b823-98a812cf26c9"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

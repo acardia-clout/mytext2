@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [11/Apr/2020:18:16:08 +0800] "GET / HTTP/1.1" 302 - http-bio-85-exec-2 231
+0:0:0:0:0:0:0:1 - - [11/Apr/2020:18:16:08 +0800] "GET /login.html HTTP/1.1" 200 327 http-bio-85-exec-3 8
+0:0:0:0:0:0:0:1 - - [11/Apr/2020:18:16:09 +0800] "GET /favicon.ico HTTP/1.1" 302 - http-bio-85-exec-4 94
+0:0:0:0:0:0:0:1 - - [11/Apr/2020:18:16:13 +0800] "POST /login.do HTTP/1.1" 302 - http-bio-85-exec-5 229
+0:0:0:0:0:0:0:1 - - [11/Apr/2020:18:16:13 +0800] "GET /index.html HTTP/1.1" 200 230 http-bio-85-exec-6 11
+0:0:0:0:0:0:0:1 - - [11/Apr/2020:18:16:13 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-85-exec-7 36

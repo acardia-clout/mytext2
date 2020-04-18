@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="elementui/index.css">
+    <script src="elementui/vue.js"></script>
+    <script src="elementui/index.js"></script>
+</head>
+<body>
+<!--第二步：定义vue管理区域-->
+<div id="app">
+
+    <!--table组件 表格方式显示数据
+    :data:数据绑定缩写
+    -->
+    <el-table
+            :data="tableData"
+            border
+            style="width: 100%">
+        <!--prop="date"  名称必须和返回的数据名称要一致 -->
+        <el-table-column
+                fixed
+                prop="date"
+                label="日期"
+                width="150">
+        </el-table-column>
+        <el-table-column
+                prop="name"
+                label="姓名"
+                width="120">
+        </el-table-column>
+        <el-table-column
+                prop="province"
+                label="省份"
+                width="120">
+        </el-table-column>
+        <el-table-column
+                prop="city"
+                label="市区"
+                width="120">
+        </el-table-column>
+        <el-table-column
+                prop="address"
+                label="地址"
+                width="300">
+        </el-table-column>
+        <el-table-column
+                prop="zip"
+                label="邮编"
+                width="120">
+        </el-table-column>
+        <el-table-column
+                fixed="right"
+                label="操作"
+                width="100">
+            <template slot-scope="scope">
+                <!--按钮组件  scope.row 获取当前行对象-->
+                <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+                <el-button type="text" size="small">编辑</el-button>
+            </template>
+        </el-table-column>
+    </el-table>
+
+    <!--分页组件
+    size-change:handleSizeChange 每夜多少条
+   current-change:handleCurrentChange 切换当前页码
+   current-page:currentPage4 默认当前第几页（一般情况默认第一页）
+   page-sizes:每页显示条数列表
+   page-size：当前页面默认显示数据条数
+   layout：分页组件布局
+   total：总记录数
+    -->
+    <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage4"
+            :page-sizes="[10, 20, 30, 40]"
+            :page-size="10"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="400">
+    </el-pagination>
+
+</div>
+</body>
+<!--第三步：创建vue实例对象-->
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            handleClick(row) {
+                console.log(row);
+            },
+            handleSizeChange(val) {
+                //console.log(`每页 ${val} 条`);
+                console.log(`每页 ${val} 条`);
+            },
+            handleCurrentChange(val) {
+                console.log(`当前页: ${val}`);
+            }
+        },
+        data() {
+            return {
+                //相当于查询数据库表 返回List<T>
+                tableData: [{
+                    date: '2016-05-02',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1518 弄',
+                    zip: 200333
+                }, {
+                    date: '2016-05-04',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1517 弄',
+                    zip: 200333
+                }, {
+                    date: '2016-05-01',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1519 弄',
+                    zip: 200333
+                }, {
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1516 弄',
+                    zip: 200333
+                }],
+                currentPage1: 5,
+                currentPage2: 5,
+                currentPage3: 5,
+                currentPage4: 1
+            }
+        }
+    })
+</script>
+</html>

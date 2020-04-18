@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                  http://www.springframework.org/schema/beans/spring-beans.xsd
+                  http://www.springframework.org/schema/context
+                  http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--开启注解配置支持  JedisPool获取到了-->
+    <context:annotation-config></context:annotation-config>
+
+    <!--将任务类放到spring容器-->
+    <bean id="clearImageJob" class="com.itheima.job.ClearImageJob"/>
+    <!--任务描述JobDetail   作用就是通过反射调用指定的job-->
+    <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!--注入任务-->
+        <property name="targetObject" ref="clearImageJob"/>
+        <!--注入调用方法-->
+        <property name="targetMethod" value="deleteImgs"/>
+    </bean>
+    <!--配置触发器 指定任务触发时间-->
+    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <!--注入jobDetail-->
+        <property name="jobDetail" ref="jobDetail"/>
+        <!--指定触发时间  cron表达式-->
+        <property name="cronExpression">
+            <!--后续单独来说  5秒钟执行一次
+            一般凌晨2:00
+            -->
+            <value>0/5 * * * * ?</value>
+        </property>
+    </bean>
+
+    <!--调度工厂-->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <!--注入触发器-->
+        <property name="triggers">
+            <list>
+                <ref bean="cronTrigger"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
